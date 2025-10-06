@@ -86,6 +86,7 @@ L’infrastructure repose sur une **machine Master** et plusieurs **nœuds (work
 ---
 
 ## 📘 Structure du Répertoire Ansible
+```text
 ansible/
 ├── deploy-website.yml
 ├── task.yml
@@ -95,14 +96,14 @@ ansible/
     ├── inventory
     └── roles/
         ├── webserver/
-        │ ├── tasks/main.yml
-        │ ├── vars/main.yml
-        │ └── handlers/main.yml
+        │   ├── tasks/main.yml
+        │   ├── vars/main.yml
+        │   └── handlers/main.yml
         └── loadbalancer/
-        ├── tasks/main.yml
-        ├── vars/main.yml
-        └── handlers/main.yml
-
+            ├── tasks/main.yml
+            ├── vars/main.yml
+            └── handlers/main.yml
+```
 
 ---
 
