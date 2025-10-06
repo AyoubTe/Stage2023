@@ -7,20 +7,17 @@
     - name: Update System packages
       yum: 
         name: '*'
-      become: yes
 
     - name: Install Apache
       yum:
         name: httpd
         state: present
-      become: yes
 
     - name: Start Apache Service
       service:
         name: httpd
         state: started
         enabled: yes
-      become: yes
     
     - name: Allow HTTP and HTTPS Through Firewall
       firewalld:
@@ -30,13 +27,11 @@
       with_items:
         - http
         - https
-      become: yes
 
     - name: Create Website Directory
       file: 
         path: /var/www/html/it24
         state: directory
-      become: yes
     
     - name: Set Apache User and Group OwenerShip
       file:
@@ -44,18 +39,15 @@
         owner: apache 
         group: apache
         recurse: yes
-      become: yes
 
     - name: Test Apache Configuration
       command: apachectl configuration
       register: apache_config_test
-      become: yes
       ignore_errors: yes
     
     - name: Restart Apache Service
       service: 
         name: httpd
         state: restarted
-      become: yes
       when: apache_config_test.rc == 0
 
