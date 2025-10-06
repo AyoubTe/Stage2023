@@ -1,0 +1,16 @@
+---
+# tasks file for webserver
+- name: Install Httpd Software
+  package:
+    name: "{{ package_name }}"
+    state: present
+
+- name: Copy website
+  template:
+    src: /home/ansible/it24
+    dest: "{{ doc_root }}"
+
+- name: Httpd Service start
+  service: 
+    name: "{{ service_name }}"
+    state: started

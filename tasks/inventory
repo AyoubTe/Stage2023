@@ -1,0 +1,13 @@
+[webservers]
+worker1 ansible_host=192.168.43.132
+webserver2 ansible_host=192.168.43.135
+webserver3 ansible_host=192.168.43.136
+
+[loadbalancer]
+loadbalancer ansible_host=192.168.43.130
+
+[prod]
+worker2 ansible_host=192.168.43.133
+
+[database]
+worker3 ansible_host=192.168.43.134

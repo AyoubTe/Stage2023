@@ -1,0 +1,10 @@
+---
+- name: Deploy the website on the servers
+  hosts: webservers
+  roles:
+  - webserver
+
+- name: Establish load balancing between servers
+  hosts: loadbalancer
+  roles:
+  - loadbalancer
